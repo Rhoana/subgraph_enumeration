@@ -115,7 +115,7 @@ Edge::~Edge(void)
 Graph::Graph(const char input_prefix[128], bool input_directed, bool input_vertex_color, bool input_edge_colored)
 {
     /*
-    Graph class defines the basic graph structure for addax used for clustering commmunities, motif discovery,
+    Graph class defines the basic graph structure for package used for clustering commmunities, motif discovery,
     and generating random examples
 
     @param prefix: a string to reference this graph by

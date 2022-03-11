@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-from addax.utilities.dataIO import WriteGraph
+from subgraph_enumeration.utilities.dataIO import WriteGraph
 
 
 

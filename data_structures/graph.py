@@ -5,7 +5,7 @@ import struct
 class Graph(object):
     def __init__(self, prefix, directed, vertex_colored, edge_colored):
         """
-        Graph class defines the basic graph structure for addax used for clustering commmunities, motif discovery,
+        Graph class defines the basic graph structure for package used for clustering commmunities, motif discovery,
         and generating random examples
 
         @param prefix: a string to reference this graph by

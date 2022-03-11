@@ -16,9 +16,9 @@ plt.style.use('seaborn')
 plt.rcParams['font.family'] = 'Ubuntu'
 
 
-from addax.analysis.certificates import ReadCertificates, ReadSummaryStatistics
-from addax.kavosh.classify import ParseCertificate
-from addax.utilities.dataIO import ReadGraph
+from subgraph_enumeration.analysis.certificates import ReadCertificates, ReadSummaryStatistics
+from subgraph_enumeration.kavosh.classify import ParseCertificate
+from subgraph_enumeration.utilities.dataIO import ReadGraph
 
 
 

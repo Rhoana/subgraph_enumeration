@@ -1,4 +1,4 @@
-from addax.utilities.dataIO import ReadGraph
+from subgraph_enumeration.utilities.dataIO import ReadGraph
 
 
 

@@ -2,8 +2,8 @@ import os
 
 
 
-from addax.utilities.dataIO import ReadGraph
-from addax.kavosh.enumerate import CreateDirectoryStructure
+from subgraph_enumeration.utilities.dataIO import ReadGraph
+from subgraph_enumeration.kavosh.enumerate import CreateDirectoryStructure
 
 
 

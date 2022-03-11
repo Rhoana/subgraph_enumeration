@@ -2,7 +2,7 @@ import sys
 
 
 
-from addax.analysis.certificates import ReadSummaryStatistics
+from subgraph_enumeration.analysis.certificates import ReadSummaryStatistics
 
 
 

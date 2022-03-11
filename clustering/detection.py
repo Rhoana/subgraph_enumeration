@@ -9,7 +9,7 @@ import community as community_louvain
 
 
 
-from addax.utilities.dataIO import WriteGraph
+from subgraph_enumeration.utilities.dataIO import WriteGraph
 
 
 

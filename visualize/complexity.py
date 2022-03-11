@@ -15,8 +15,8 @@ plt.rcParams['font.family'] = 'monospace'
 
 
 
-from addax.evaluation.complexity import PrintRunningTimeStatistics
-from addax.data_structures.enumeration import MapVerticesToNeighborhoodSizes
+from subgraph_enumeration.evaluation.complexity import PrintRunningTimeStatistics
+from subgraph_enumeration.data_structures.enumeration import MapVerticesToNeighborhoodSizes
 
 
 

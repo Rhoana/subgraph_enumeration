@@ -3,9 +3,9 @@ import xlrd
 
 
 
-from addax.data_structures.graph import Graph
-from addax.data_structures.enumeration import CalculateAscendingEnumerationIndex
-from addax.utilities.dataIO import ReadGraph, WriteGraph
+from subgraph_enumeration.data_structures.graph import Graph
+from subgraph_enumeration.data_structures.enumeration import CalculateAscendingEnumerationIndex
+from subgraph_enumeration.utilities.dataIO import ReadGraph, WriteGraph
 
 
 

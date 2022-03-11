@@ -4,7 +4,7 @@ import struct
 
 
 
-from addax.data_structures.graph import Graph
+from subgraph_enumeration.data_structures.graph import Graph
 
 
 

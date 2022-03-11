@@ -2,8 +2,8 @@ import numpy as np
 
 
 
-from addax.analysis.certificates import ReadCertificates
-from addax.evaluation.certificate import CosineSimilarity, L1, TotalVariationalDistance
+from subgraph_enumeration.analysis.certificates import ReadCertificates
+from subgraph_enumeration.evaluation.certificate import CosineSimilarity, L1, TotalVariationalDistance
 
 
 

@@ -16,7 +16,7 @@ from libcpp cimport bool
 
 
 
-from addax.utilities.dataIO import ReadGraph, ReadPrefix
+from subgraph_enumeration.utilities.dataIO import ReadGraph, ReadPrefix
 
 
 
