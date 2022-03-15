@@ -5,7 +5,7 @@ import time
 
 
 from subgraph_enumeration.data_structures.graph import Graph
-from subgraph_enumeration.utilities.dataIO import ReadGraph, WriteGraph, PickleData
+from subgraph_enumeration.utilities.dataIO import WriteGraph
 from subgraph_enumeration.data_structures.enumeration import CalculateAscendingEnumerationIndex
 
 
