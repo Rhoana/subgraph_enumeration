@@ -15,6 +15,8 @@ cd kavosh
 python setup.py build_ext --inplace
 ```
 
+From here, we assume that the parent directory of subgraph_enumeration is in the python path.
+
 ## Graph Creation
 
 This library uses a custom graph class for subgraph enumeration. First, construct an empty graph:
@@ -85,7 +87,7 @@ Example of graph construction can be found in `celegans/construction.py` and `he
 ## Enumeration
 
 ```
-from addax.kavosh.enumerate import EnumerateSubgraphsSequentially, CombineEnumeratedSubgraphs
+from subgraph_enumeration.kavosh.enumerate import EnumerateSubgraphsSequentially, CombineEnumeratedSubgraphs
 
 # Call both functions to enumerate subgraphs sequentially.
 # @param filename: the location of the graph.bz2 file. It is best to use the created 
@@ -103,7 +105,7 @@ CombineEnumeratedSubgraphs(filename, k, vertex_colored, edge_colored, community_
 To run in parallel:
 
 ```
-from addax.kavosh.enumerate import EnumerateSubgraphsFromNodes
+from subgraph_enumeration.kavosh.enumerate import EnumerateSubgraphsFromNodes
 
 # @param filename: the location of the graph.bz2 file. 
 # It is best to use the created graph from running CalculateAscendingEnumerationIndex.
@@ -122,12 +124,46 @@ EnumerateSubgraphsFromNodes(filename, k, nodes, output_suffix, vertex_colored, e
 After enumerating from each vertex, you will need to run the following line to aggregate results into one file.
 
 ```
-from addax.kavosh.enumerate import CombineEnumeratedSubgraphs
+from subgraph_enumeration.kavosh.enumerate import CombineEnumeratedSubgraphs
 
 CombineEnumeratedSubgraphs(filename, k, vertex_colored, edge_colored, community_based)
 ```
 
 There is an optional write_subgraphs flag which will write the subgraphs found to disk. This should only be used on very small graphs since the number of subgraphs becomes exceptionally large and can quickly fill up an entire hard drive!
+
+## Parsing Certificates
+
+There are functions to parse a certificate created by motif discovery. Certificate files have the form:
+
+```
+Found N unique subgraphs.
+certificate-#1: noccurrences
+certificate-#2: noccurrences
+certificate-#3: noccurrences
+.
+.
+.
+Enumerated M subgraphs in T seconds.
+```
+To parse a certificate:
+
+```
+# Read the graph
+from subgraph_enumeration.utilities.dataIO import ReadGraph
+
+# if enumeration did not include vertex colors, you can add an optional parameter 
+# of header_only = True to increase speed.
+graph = ReadGraph('connectome-minimum.graph.bz2')
+
+from subgraph_enumeration.kavosh.classify import ParseCertificate
+
+# @param graph: a graph data structure object.
+# @param k: the integer size of the motifs.
+# @param certificate: the string certificate from Nauty to parse
+# @param vertex_colored: boolean for neuron labels or types.
+# @param edge_colored: boolean for edge labels or types.
+# @param directed: boolean for if the graph is directed.
+ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, directed):
 
 ## Citations
 
