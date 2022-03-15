@@ -88,7 +88,8 @@ Example of graph construction can be found in `celegans/construction.py` and `he
 from addax.kavosh.enumerate import EnumerateSubgraphsSequentially, CombineEnumeratedSubgraphs
 
 # Call both functions to enumerate subgraphs sequentially.
-# @param filename: the location of the graph.bz2 file. It is best to use the created graph from running CalculateAscendingEnumerationIndex.
+# @param filename: the location of the graph.bz2 file. It is best to use the created 
+# graph from running CalculateAscendingEnumerationIndex.
 # @param k: the integer size of the subgraphs to identify.
 # @param vertex_color: boolean for motif discovery with vertex colors.
 # @param edge_colors: boolean for motif discovery with edge colors.
@@ -104,10 +105,13 @@ To run in parallel:
 ```
 from addax.kavosh.enumerate import EnumerateSubgraphsFromNodes
 
-# @param filename: the location of the graph.bz2 file. It is best to use the created graph from running CalculateAscendingEnumerationIndex.
+# @param filename: the location of the graph.bz2 file. 
+# It is best to use the created graph from running CalculateAscendingEnumerationIndex.
 # @param k: the integer size of the subgraphs to identify.
 # @param nodes: the neuron ids to enumerate from.
-# @param output_suffix: a unique string identifier for this parallel call. Files are created based on this identifier. Do not use the same identifier for different threads for the same filename.
+# @param output_suffix: a unique string identifier for this parallel call. 
+# Files are created based on this identifier. Do not use the same identifier for 
+# different threads for the same filename.
 # @param vertex_color: boolean for motif discovery with vertex colors.
 # @param edge_colors: boolean for motif discovery with edge colors.
 # @param community: boolean for motif discovery with community divide-and-conquer.
