@@ -113,7 +113,7 @@ def FindFrequentMotifs():
 
                 for iv, (certificate, _) in enumerate(sorted(certificates.items(), key = lambda x: x[1], reverse = True)):
                     # vertex and edges are not colored, graph is directed 
-                    nx_graph = ParseCertificate(k, certificate, False, False, True)
+                    nx_graph = ParseCertificate(graph, k, certificate, False, False, True)
 
                     # get the position for networkx 
                     pos = nx.circular_layout(nx_graph)

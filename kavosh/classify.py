@@ -7,10 +7,11 @@ from subgraph_enumeration.utilities.dataIO import ReadGraph
 
 
 
-def ParseCertificate(k, certificate, vertex_colored, edge_colored, directed):
+def ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, directed):
     """
     Produce a canonical graph from a certificate
 
+    @ param graph: a graph data structure object
     @param k: motif size
     @param certificate: the certificate from Nauty to parse
     @param vertex_colored: is the graph vertex colored
@@ -140,7 +141,7 @@ def ParseCertificates(input_filename, k, vertex_colored = False, edge_colored = 
             if subgraph_digits_needed == -1: subgraph_digits_needed = len(str(nsubgraphs))
 
             # parse the certificate for this graph
-            nx_graph = ParseCertificate(k, certificate, vertex_colored, edge_colored, graph.directed)
+            nx_graph = ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, graph.directed)
 
             # create the graph drawing structure
             A = nx.nx_agraph.to_agraph(nx_graph)
