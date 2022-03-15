@@ -165,6 +165,8 @@ from subgraph_enumeration.kavosh.classify import ParseCertificate
 # @param directed: boolean for if the graph is directed.
 ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, directed):
 
+```
+
 ## Citations
 
 If you use this library, please cite [Nauty](https://pallini.di.uniroma1.it/) and our [paper](https://www.rhoana.org/subgraph_enumeration)
