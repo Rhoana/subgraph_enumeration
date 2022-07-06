@@ -2,7 +2,7 @@
 
 This library requires the C++ nauty library found [here](https://pallini.di.uniroma1.it/#howtogetit). Install this library first using their provided instructions.
 
-```
+``` shell
 git clone https://github.com/Rhoana/subgraph_enumeration.git
 cd subgraph_enumeration
 conda create -n motif_env --file requirements.txt
@@ -10,7 +10,7 @@ conda activate motif_env
 ```
 Open `kavosh/setup.py` in any text editor. Change line 15 to reference the folder where you installed Nauty.
 
-```
+``` shell
 cd kavosh
 python setup.py build_ext --inplace
 ```
@@ -21,7 +21,7 @@ From here, we assume that the parent directory of subgraph_enumeration is in the
 
 This library uses a custom graph class for subgraph enumeration. First, construct an empty graph:
 
-```
+``` python 
 from subgraph_enumeration.data_structures.graph import Graph
 from subgraph_enumeration.data_structures.enumeration import CalculateAscendingEnumerationIndex
 from subgraph_enumeration.utilities.dataIO import WriteGraph
@@ -86,7 +86,7 @@ Example of graph construction can be found in `celegans/construction.py` and `he
 
 ## Enumeration
 
-```
+``` python
 from subgraph_enumeration.kavosh.enumerate import EnumerateSubgraphsSequentially, CombineEnumeratedSubgraphs
 
 # Call both functions to enumerate subgraphs sequentially.
@@ -104,7 +104,7 @@ CombineEnumeratedSubgraphs(filename, k, vertex_colored, edge_colored, community_
 
 To run in parallel:
 
-```
+``` python
 from subgraph_enumeration.kavosh.enumerate import EnumerateSubgraphsFromNodes
 
 # @param filename: the location of the graph.bz2 file. 
@@ -123,7 +123,7 @@ EnumerateSubgraphsFromNodes(filename, k, nodes, output_suffix, vertex_colored, e
 ```
 After enumerating from each vertex, you will need to run the following line to aggregate results into one file.
 
-```
+``` python
 from subgraph_enumeration.kavosh.enumerate import CombineEnumeratedSubgraphs
 
 CombineEnumeratedSubgraphs(filename, k, vertex_colored, edge_colored, community_based)
@@ -147,7 +147,7 @@ Enumerated M subgraphs in T seconds.
 ```
 To parse a certificate:
 
-```
+``` python
 # Read the graph
 from subgraph_enumeration.utilities.dataIO import ReadGraph
 
