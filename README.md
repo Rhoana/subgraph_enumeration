@@ -163,7 +163,8 @@ from subgraph_enumeration.kavosh.classify import ParseCertificate
 # @param vertex_colored: boolean for neuron labels or types.
 # @param edge_colored: boolean for edge labels or types.
 # @param directed: boolean for if the graph is directed.
-ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, directed):
+result = ParseCertificate(graph, k, certificate, vertex_colored, edge_colored, directed)
+print(result)
 
 ```
 
