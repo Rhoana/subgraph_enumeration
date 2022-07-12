@@ -27,6 +27,7 @@ def ConstructGraphFromHemiBrainCSV(MODERATE_THRESHOLD = 4, STRONG_THRESHOLD = 10
     neuron_types = set()
 
     # open the neuron csv file
+    # download file here: https://storage.cloud.google.com/hemibrain/v1.2/exported-traced-adjacencies-v1.2.tar.gz
     neuron_filename = 'CSVs/HemiBrain/traced-neurons.csv'
     with open(neuron_filename, newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
@@ -44,6 +45,7 @@ def ConstructGraphFromHemiBrainCSV(MODERATE_THRESHOLD = 4, STRONG_THRESHOLD = 10
             neuron_types.add(neuron_type)
 
     # read the synapses by region of interest
+    # download file here: https://storage.cloud.google.com/hemibrain/v1.2/exported-traced-adjacencies-v1.2.tar.gz
     synapse_filename = 'CSVs/HemiBrain/traced-roi-connections.csv'
     with open(synapse_filename, newline='') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
