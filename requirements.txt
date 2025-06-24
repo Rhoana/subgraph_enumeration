@@ -1,9 +1,0 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-networkx~=2.8.4
-numpy~=1.23.0
-matplotlib~=3.5.2
-xlrd~=2.0.1
-metis~=0.2a5
-community~=1.0.0b1
-cython~=0.29.30

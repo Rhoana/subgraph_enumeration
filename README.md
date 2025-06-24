@@ -5,7 +5,7 @@ This library requires the C++ nauty library found [here](https://pallini.di.unir
 ``` shell
 git clone https://github.com/Rhoana/subgraph_enumeration.git
 cd subgraph_enumeration
-conda create -n motif_env --file requirements.txt
+conda env create -f environment.yml
 conda activate motif_env
 ```
 Open `kavosh/setup.py` in any text editor. Change line 15 to reference the folder where you installed Nauty.
