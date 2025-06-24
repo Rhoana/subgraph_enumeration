@@ -1,4 +1,3 @@
-#include <pwd.h>
 #include <stdio.h>
 #include <math.h>
 #include <chrono>
@@ -640,12 +639,9 @@ void CppEnumerateSubgraphsSequentially(const char *input_filename, const char *t
     Graph *G = ReadBZ2Graph(input_filename);
     if (!G) exit(-1);
 
-    // home directory
-    passwd *pw = getpwuid(getuid());
-
     // create a new file for writing the certificates
     char output_filename[4096];
-    snprintf(output_filename, 4096, "%s/motifs/%s/certificates/motif-size-%03d-certificates.txt", pw->pw_dir, temp_directory, k);
+    snprintf(output_filename, 4096, "%s/certificates/motif-size-%03d-certificates.txt", temp_directory, k);
 
     // open the file
     certificate_fp = fopen(output_filename, "w");
@@ -654,7 +650,7 @@ void CppEnumerateSubgraphsSequentially(const char *input_filename, const char *t
     // create a new file for writing subgraphs if needed
     if (WRITE_SUBGRAPHS) {
         char subgraph_filename[4096];
-        snprintf(subgraph_filename, 4096, "%s/motifs/%s/subgraphs/motif-size-%03d-subgraphs.txt", pw->pw_dir, temp_directory, k);
+        snprintf(subgraph_filename, 4096, "%s/subgraphs/motif-size-%03d-subgraphs.txt", temp_directory, k);
 
         // open the file
         subgraph_fp = fopen(subgraph_filename, "w");
@@ -683,12 +679,9 @@ void CppEnumerateSubgraphsFromNodes(const char *input_filename, const char *temp
     Graph *G = ReadBZ2Graph(input_filename);
     if (!G) exit(-1);
 
-    // home directory
-    passwd *pw = getpwuid(getuid());
-
     // create a new file for writing the certificates
     char output_filename[4096];
-    snprintf(output_filename, 4096, "%s/motifs/%s/certificates/motif-size-%03d-output-%08ld-certificates.txt", pw->pw_dir, temp_directory, k, output_suffix);
+    snprintf(output_filename, 4096, "%s/certificates/motif-size-%03d-output-%08ld-certificates.txt", temp_directory, k, output_suffix);
 
     // open the file
     certificate_fp = fopen(output_filename, "w");
@@ -697,7 +690,7 @@ void CppEnumerateSubgraphsFromNodes(const char *input_filename, const char *temp
     // create a new file for writing subgraphs if needed
     if (WRITE_SUBGRAPHS) {
         char subgraph_filename[4096];
-        snprintf(subgraph_filename, 4096, "%s/motifs/%s/subgraphs/motif-size-%03d-output-%08ld-subgraphs.txt", pw->pw_dir, temp_directory, k, output_suffix);
+        snprintf(subgraph_filename, 4096, "%s/subgraphs/motif-size-%03d-output-%08ld-subgraphs.txt", temp_directory, k, output_suffix);
 
         // open the file
         subgraph_fp = fopen(subgraph_filename, "w");
